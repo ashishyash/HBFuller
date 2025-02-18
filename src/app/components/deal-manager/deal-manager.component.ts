@@ -17,12 +17,7 @@ export class DealManagerComponent {
     { field: 'sales3', header: 'BCust' },
     { field: 'sales4', header: 'CCust' }
   ];
-  marginColumn = [
-    { field: 'sales', header: 'Sales $' },
-    { field: 'sales1', header: 'All Cust' },
-    { field: 'sales2', header: ' ACust' },
-    { field: 'sales3', header: 'BCust' },
-    { field: 'sales4', header: 'CCust' }];
+  marginColumn = [...this.salesColumn];
   salesData = Array.from({ length: 4 }, (_, i) => ({
     sales: 'content',
     sales1: 'content',
@@ -30,11 +25,5 @@ export class DealManagerComponent {
     sales3: 'content',
     sales4: 'content'
   }));
-  marginData = Array.from({ length: 4 }, (_, i) => ({
-    sales: 'content',
-    sales1: 'content',
-    sales2: 'content',
-    sales3: 'content',
-    sales4: 'content'
-  }));
+  marginData = [...this.salesData];
 }

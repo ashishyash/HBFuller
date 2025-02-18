@@ -1,38 +1,17 @@
-<!-- <div class="p-3">
-    <form [formGroup]="filterForm">
-        <div class="flex flex-wrap gap-3 align-items-center mb-3">
-            <div class="relative">
-                <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input type="text" pInputText formControlName="searchQuery"
-                        placeholder="Search by Customer name or area..." />
-                </span>
-            </div>
-            <p-dropdown formControlName="businessUnit" [options]="businessUnits"
-                placeholder="All Global Business Units">
-            </p-dropdown>
-            <p-dropdown formControlName="businessRegion" [options]="businessRegions" placeholder="All Business Regions">
-            </p-dropdown>
-            <button pButton label="reset" class="p-button-text" (click)="resetFilters()" type="button"></button>
-        </div>
-    </form>
-    <app-customers-table [data]="customers" [columns]="columns"></app-customers-table>
-</div> -->
-
-<div class=" flex gap-3 p-3">
-    <app-filter-component></app-filter-component>
+<div class="flex gap-3 p-3">
+    <app-filter-component class="w-6"></app-filter-component>
     <div class="w-6 flex flex-column gap-3">
-        <h3 class="m-0">Performance</h3>
+        <h3>Performance</h3>
         <p-card class="flex flex-column">
-            <h4 class="p-2">Sales $</h4>
+            <h4 class="p-2 text-green-500">Sales $</h4>
             <app-customers-table [data]="salesData" [columns]="salesColumn"></app-customers-table>
         </p-card>
         <p-card class="flex flex-column">
-            <h4 class="p-2">Contribution Margin $</h4>
+            <h4 class="p-2 text-green-500">Contribution Margin $</h4>
             <app-customers-table [data]="marginData" [columns]="marginColumn"></app-customers-table>
         </p-card>
         <p-card class="flex flex-column">
-            <h4 class="p-2">Contribution Margin $</h4>
+            <h4 class="p-2 text-green-500">Contribution Margin $</h4>
             <app-customers-table [data]="marginData" [columns]="marginColumn"></app-customers-table>
         </p-card>
     </div>
