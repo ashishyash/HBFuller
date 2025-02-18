@@ -1,0 +1,34 @@
+[
+    {
+      "operatingSegmentId": 6,
+      "operatingSegmentName": "BUILDING ADHESIVE SOLUTIONS",
+      "operatingSegmentAbbreviation": "BAS",
+      "abbreviation": null,
+      "globalMarkets": null,
+      "businesses": null
+    },
+    {
+      "operatingSegmentId": 4,
+      "operatingSegmentName": "ENGINEERING ADHESIVES",
+      "operatingSegmentAbbreviation": "EA",
+      "abbreviation": null,
+      "globalMarkets": null,
+      "businesses": null
+    },
+    {
+      "operatingSegmentId": 7,
+      "operatingSegmentName": "HYGIENE HEALTH & CONSUMABLES",
+      "operatingSegmentAbbreviation": "HHC",
+      "abbreviation": null,
+      "globalMarkets": null,
+      "businesses": null
+    },
+    {
+      "operatingSegmentId": 8,
+      "operatingSegmentName": "TEC SPECIALTY PRODUCTS",
+      "operatingSegmentAbbreviation": "TSP",
+      "abbreviation": null,
+      "globalMarkets": null,
+      "businesses": null
+    }
+  ]

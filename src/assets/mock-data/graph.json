@@ -1,0 +1,96 @@
+{
+  "currencyCode": "USD",
+  "materialMarketId": 0,
+  "operatingSegmentId": 0,
+  "pricingSegmentId": null,
+  "valueHistorical": {
+    "total": 2121100498.83217,
+    "aCustomer": 1735109424.428654,
+    "bCustomer": 292285684.181919,
+    "cCustomer": 93705390.221597
+  },
+  "valueCurrent": {
+    "total": 1269020328.076656,
+    "aCustomer": 1016979359.551089,
+    "bCustomer": 192897419.334633,
+    "cCustomer": 59143549.190934
+  },
+  "valueFuture": {
+    "total": 1262752796.62604,
+    "aCustomer": 1011460411.241581,
+    "bCustomer": 192303782.669101,
+    "cCustomer": 58988602.715358
+  },
+  "valueSegmentExpected": null,
+  "valueExpected": null,
+  "valueRollup": {
+    "total": 303536237329.0729,
+    "aCustomer": 231595888994.53296,
+    "bCustomer": 56515527130.787476,
+    "cCustomer": 15424821203.752445
+  },
+  "percentHistorical": {
+    "total": 0.625101,
+    "aCustomer": 0.635445,
+    "bCustomer": 0.580015,
+    "cCustomer": 0.590309
+  },
+  "percentCurrent": {
+    "total": 0.495129,
+    "aCustomer": 0.482131,
+    "bCustomer": 0.551407,
+    "cCustomer": 0.569551
+  },
+  "percentFuture": {
+    "total": 0.492683,
+    "aCustomer": 0.479515,
+    "bCustomer": 0.54971,
+    "cCustomer": 0.568059
+  },
+  "percentSegmentExpected": null,
+  "percentExpected": null,
+  "percentRollup": {
+    "total": 0.41223,
+    "aCustomer": 0.403348,
+    "bCustomer": 0.441044,
+    "cCustomer": 0.453626
+  },
+  "salesHistorical": {
+    "total": 3393207145.61,
+    "aCustomer": 2730540288.87,
+    "bCustomer": 503927461.89,
+    "cCustomer": 158739394.85
+  },
+  "salesCurrent": {
+    "total": 2563009377.800414,
+    "aCustomer": 2109339670.160072,
+    "bCustomer": 349827470.58486,
+    "cCustomer": 103842237.055482
+  },
+  "salesFuture": {
+    "total": 2563009377.800414,
+    "aCustomer": 2109339670.160072,
+    "bCustomer": 349827470.58486,
+    "cCustomer": 103842237.055482
+  },
+  "salesSegmentExpected": null,
+  "salesExpected": null,
+  "salesRollup": {
+    "total": 736326689092.5027,
+    "aCustomer": 574183176675.3126,
+    "bCustomer": 128140179433.8915,
+    "cCustomer": 34003332983.2986
+  },
+  "transactionCounts": {
+    "total": 167830,
+    "aCustomer": 89570,
+    "bCustomer": 38193,
+    "cCustomer": 40170
+  },
+  "customerCounts": {
+    "total": 30092,
+    "aCustomer": 10564,
+    "bCustomer": 6052,
+    "cCustomer": 13587
+  }
+}

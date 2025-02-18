@@ -1,0 +1,53 @@
+[
+    {
+        "title": "Home",
+        "icon": "pi-home",
+        "link": "/"
+    },
+    {
+        "title": "Setting",
+        "icon": "pi-cog",
+        "link": "/setting"
+    },
+    {
+        "title": "User",
+        "icon": "pi-user",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-megaphone",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-bullseye",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-bullseye",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-lock-open",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-box",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-wrench",
+        "link": "/user"
+    },
+    {
+        "title": "User",
+        "icon": "pi-chart-pie",
+        "link": "/user"
+    }
+]
+

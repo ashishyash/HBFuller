@@ -1,0 +1,42 @@
+[
+    {
+      "businessRegionId": 2,
+      "businessRegionName": "ANZ",
+      "businessRegionAbbreviation": "ANZ",
+      "hasSales": false,
+      "growRegion": null,
+      "subRegions": null
+    },
+    {
+      "businessRegionId": 3,
+      "businessRegionName": "Asia",
+      "businessRegionAbbreviation": "Asia",
+      "hasSales": false,
+      "growRegion": null,
+      "subRegions": null
+    },
+    {
+      "businessRegionId": 4,
+      "businessRegionName": "EIMEA",
+      "businessRegionAbbreviation": "EIMEA",
+      "hasSales": false,
+      "growRegion": null,
+      "subRegions": null
+    },
+    {
+      "businessRegionId": 5,
+      "businessRegionName": "Latin America",
+      "businessRegionAbbreviation": "LA",
+      "hasSales": false,
+      "growRegion": null,
+      "subRegions": null
+    },
+    {
+      "businessRegionId": 6,
+      "businessRegionName": "North America",
+      "businessRegionAbbreviation": "NA",
+      "hasSales": false,
+      "growRegion": null,
+      "subRegions": null
+    }
+  ]

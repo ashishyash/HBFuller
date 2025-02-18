@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
@@ -9,7 +9,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
   selector: 'app-header',
   imports: [RouterModule, ToolbarModule, ButtonModule, IconFieldModule, InputIconModule, SplitButtonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HeaderComponent {
 

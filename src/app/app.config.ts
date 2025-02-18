@@ -1,6 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -19,13 +18,17 @@ export const appConfig: ApplicationConfig = {
       options: {
         cssLayer: {
           name: 'primeng',
-          order: 'reset, primeng, app-styles'
+          order: 'reset, primeng, styles'
       }
       },
     },
     csp: {
-      nonce: '...'
+      nonce: generateNonce()
     },
   })
   ]
 };
+function generateNonce(): string  {
+  return Math.floor(Math.random() * 1000000000).toString();
+}
+
