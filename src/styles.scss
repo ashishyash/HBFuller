@@ -1,4 +1,11 @@
-@import "primeicons/primeicons.css";
+
+@plugin 'tailwindcss-primeui';
+@layer tailwind, primeng;
+
+@layer tailwind {
+  @use "tailwindcss";
+}
 .p-toolbar{
     background-color: var(--p-blue-500);
 }
+@use "primeicons/primeicons.css";

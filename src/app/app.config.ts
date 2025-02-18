@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
       options: {
         cssLayer: {
           name: 'primeng',
-          order: 'reset, primeng, app-styles'
+          order: 'reset, tailwind, primeng, app-styles'
       }
       },
     },
