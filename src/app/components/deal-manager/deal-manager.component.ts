@@ -1,11 +1,40 @@
 import { Component } from '@angular/core';
-
+import { FilterComponentComponent } from './filter-component/filter-component.component';
+import { CardModule } from 'primeng/card';
+import { CustomersTableComponent } from './customers-table/customers-table.component';
 @Component({
   selector: 'app-deal-manager',
-  imports: [],
+  imports: [FilterComponentComponent, CardModule, CustomersTableComponent
+  ],
   templateUrl: './deal-manager.component.html',
   styleUrl: './deal-manager.component.scss',
 })
 export class DealManagerComponent {
-
+  salesColumn = [
+    { field: 'sales', header: 'Sales $' },
+    { field: 'sales1', header: 'All Cust' },
+    { field: 'sales2', header: ' ACust' },
+    { field: 'sales3', header: 'BCust' },
+    { field: 'sales4', header: 'CCust' }
+  ];
+  marginColumn = [
+    { field: 'sales', header: 'Sales $' },
+    { field: 'sales1', header: 'All Cust' },
+    { field: 'sales2', header: ' ACust' },
+    { field: 'sales3', header: 'BCust' },
+    { field: 'sales4', header: 'CCust' }];
+  salesData = Array.from({ length: 4 }, (_, i) => ({
+    sales: 'content',
+    sales1: 'content',
+    sales2: 'content',
+    sales3: 'content',
+    sales4: 'content'
+  }));
+  marginData = Array.from({ length: 4 }, (_, i) => ({
+    sales: 'content',
+    sales1: 'content',
+    sales2: 'content',
+    sales3: 'content',
+    sales4: 'content'
+  }));
 }
