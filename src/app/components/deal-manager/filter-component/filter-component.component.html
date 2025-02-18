@@ -1,20 +1,15 @@
 <p-card class="w-full h-full flex flex-column">
     <h4 class="p-2">Search</h4>
-    <form [formGroup]="filterForm" class="p-2 flex gap-2">
-        <span class="p-input-icon-left flex-grow-1">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText formControlName="searchQuery" placeholder="Search by Customer name or area..."
-                class="w-full" />
+    <form [formGroup]="filterForm" class="p-2 flex gap-2 align-items-center">
+        <span class="p-input-icon-left flex-grow-1 relative">
+            <i class="pi pi-search absolute left-2 top-1/2 transform -translate-y-1/2"></i>
+            <input type="text" pInputText formControlName="searchQuery" placeholder="Search by Customer name or area..." class="w-full pl-10" />
         </span>
-        <p-dropdown class="w-4" formControlName="businessUnit" [options]="businessUnits"
-            placeholder="All Global Business Units">
-        </p-dropdown>
-        <p-dropdown class="w-4" formControlName="businessRegion" [options]="businessRegions"
-            placeholder="All Business Regions">
-        </p-dropdown>
+        <p-dropdown class="w-4" formControlName="businessUnit" [options]="businessUnits" placeholder="All Global Business Units"></p-dropdown>
+        <p-dropdown class="w-4" formControlName="businessRegion" [options]="businessRegions" placeholder="All Business Regions"></p-dropdown>
         <button pButton label="reset" class="p-button-text p-button-sm" (click)="resetFilters()" type="button"></button>
     </form>
-    <div class="overflow-auto flex-grow-1 p-2">
+    <div class="overflow-y-auto overflow-x-hidden flex-grow-1 p-2 custom-scrollbar">
         <app-customers-table [data]="customers" [columns]="columns"></app-customers-table>
     </div>
 </p-card>
