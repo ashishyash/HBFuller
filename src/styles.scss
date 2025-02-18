@@ -1,4 +1,7 @@
-@import "primeicons/primeicons.css";
+@use "primeicons/primeicons.css";
+@use "../node_modules/primeflex/primeflex.css";
+
+
 .p-toolbar{
     background-color: var(--p-blue-500);
 }
