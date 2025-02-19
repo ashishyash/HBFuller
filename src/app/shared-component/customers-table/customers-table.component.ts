@@ -10,5 +10,7 @@ import { TableModule } from 'primeng/table';
 })
 export class CustomersTableComponent {
   @Input() data: any[] = [];
-  @Input() columns: { field: string, header: string }[] = []
+  @Input() columns: { field: string, header: string }[] = [];
+  @Input() showCustomerCount: boolean = true;
+  @Input() showBorderColor: boolean = false;
 }

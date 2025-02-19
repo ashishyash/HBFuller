@@ -1,5 +1,5 @@
 <p-card class="w-full h-full flex flex-column">
-    <h4 class="p-2">Search</h4>
+    <h4 class="p-2 font-bold">Search</h4>
     <form [formGroup]="filterForm" class="p-2 flex gap-2 align-items-center">
         <span class="p-input-icon-left flex-grow-1 relative">
             <i class="pi pi-search absolute left-2 top-1/2 transform -translate-y-1/2"></i>
@@ -12,6 +12,6 @@
         <button pButton label="reset" class="p-button-text p-button-sm" (click)="resetFilters()" type="button"></button>
     </form>
     <div class="flex-grow-1 p-2">
-        <app-customers-table [data]="customers" [columns]="columns"></app-customers-table>
+        <app-customers-table [data]="customers" [columns]="columns" [showCustomerCount]="true" [showBorderColor]="true"></app-customers-table>
     </div>
 </p-card>

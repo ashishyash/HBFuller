@@ -1,18 +1,18 @@
 <div class="flex gap-3 p-3">
     <app-filter-component class="w-6"></app-filter-component>
     <div class="w-6 flex flex-column gap-3">
-        <h3>Performance</h3>
+        <h3 class="font-bold">Performance</h3>
         <p-card class="flex flex-column">
             <h4 class="p-2 text-green-500">Sales $</h4>
-            <app-customers-table [data]="salesData" [columns]="salesColumn"></app-customers-table>
+            <app-customers-table [data]="salesData" [columns]="salesColumn" [showCustomerCount]="false"></app-customers-table>
         </p-card>
         <p-card class="flex flex-column">
             <h4 class="p-2 text-green-500">Contribution Margin $</h4>
-            <app-customers-table [data]="marginData" [columns]="marginColumn"></app-customers-table>
+            <app-customers-table [data]="marginData" [columns]="marginColumn" [showCustomerCount]="false"></app-customers-table>
         </p-card>
         <p-card class="flex flex-column">
             <h4 class="p-2 text-green-500">Contribution Margin $</h4>
-            <app-customers-table [data]="marginData" [columns]="marginColumn"></app-customers-table>
+            <app-customers-table [data]="marginData" [columns]="marginColumn" [showCustomerCount]="false"></app-customers-table>
         </p-card>
     </div>
 </div>
