@@ -1,39 +1,44 @@
 @use "primeicons/primeicons.css";
 @use "../node_modules/primeflex/primeflex.css";
 
-@layer theme {
+@layer styles {
     :root {
       --p-blue-900:#1D4370;
     }
+    ::-webkit-scrollbar {
+      width: 6px; 
+      height: 6px;
+    }
+    
+   ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    
+   ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    
+    /* For Firefox */
+  //  *{
+  //   scrollbar-width: thin;
+  //   scrollbar-color: #888 #f1f1f1;
+  //  }
+  h3{
+    font-size: 1.25rem;
+    font-weight: 600;
   }
-@layer theme;
+  }
+@layer styles;
 html,body{
     font-family: "Inter", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-.p-table::-webkit-scrollbar {
-  width: 6px; 
-  height: 6px;
-}
 
-.p-table::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.p-table::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-.p-table::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* For Firefox */
-.p-table {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
-}
 

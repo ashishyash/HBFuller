@@ -3,10 +3,11 @@ import { RestService } from '../../services/rest.service';
 import { templateUrl } from '../../constant';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, TooltipModule ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
