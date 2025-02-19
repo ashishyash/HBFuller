@@ -1,8 +1,8 @@
 <nav class="flex flex-column align-items-center justify-content-between p-3">
-    <ul class="flex flex-column gap-3 align-items-center w-full mt-4 list-none p-0">
+    <ul class="flex flex-column gap-3 align-items-center mt-4 list-none p-0">
         @for (item of mainMenu; track $index) {
             <li class="w-full">
-                <a  routerLinkActive="active" [routerLink]="item.link" class="flex align-items-center justify-content-center border-circlr w-3rem h-3rem text-decoration-none">
+                <a pTooltip="{{item.title}}" tooltipPosition="right"   routerLinkActive="active" [routerLink]="item.link" class="flex align-items-center justify-content-center border-circlr w-3rem h-3rem text-decoration-none">
                     <span class=" {{'pi ' + item.icon + ' text-white text-2xl'}}"></span>
                 </a>
             </li>
