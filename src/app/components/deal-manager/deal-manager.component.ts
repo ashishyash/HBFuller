@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FilterComponentComponent } from '../../shared-component/filter-component/filter-component.component';
 import { CardModule } from 'primeng/card';
 import { CustomersTableComponent } from '../../shared-component/customers-table/customers-table.component';
+import { RestService } from '../../services/rest.service';
 @Component({
   selector: 'app-deal-manager',
   imports: [FilterComponentComponent, CardModule, CustomersTableComponent
@@ -26,4 +27,7 @@ export class DealManagerComponent {
     sales4: 'content'
   }));
   marginData = [...this.salesData];
+  
+  constructor(private restService: RestService) {}
+   
 }
