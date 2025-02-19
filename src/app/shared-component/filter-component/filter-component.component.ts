@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CustomersTableComponent } from '../customers-table/customers-table.component';
 import { RestService } from '../../services/rest.service';
 import { templateUrl } from '../../constant';
+import { debounceTime, filter } from 'rxjs';
 
 @Component({
   selector: 'app-filter-component',
@@ -40,11 +41,15 @@ export class FilterComponentComponent {
     });
 
   }
+  
   ngOnInit() {
     this.getAllCustomers();
     this.getBusinessUnit();
     this.getBusinessRegion();
-    this.filterForm.valueChanges.subscribe(() => this.filterData());
+    this.filterForm.valueChanges
+      .pipe(
+        debounceTime(300), filter(({ searchQuery }) => searchQuery.length >= 3 || searchQuery.length === 0))
+      .subscribe(() => this.filterData());
   }
 
   getAllCustomers() {
@@ -69,6 +74,7 @@ export class FilterComponentComponent {
       });
     });
   }
+
   filterData() {
     const { searchQuery, businessUnit, businessRegion } = this.filterForm.value;
     this.customers = this.allCustomers.filter(customer => {
