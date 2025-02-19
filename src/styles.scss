@@ -2,65 +2,95 @@
 @use "../node_modules/primeflex/primeflex.css";
 
 @layer styles {
-  html,body{
+
+  html,
+  body {
     font-family: "Inter", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-}
-    ::-webkit-scrollbar {
-      width: 6px; 
-      height: 6px;
-    }
-    
-   ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 10px;
-    }
-    
-   ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-    
-    /* For Firefox */
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  h1 {
+    font-size: 2 rem;
+  }
+
+  h2 {
+    font-size: 1.5 rem;
+  }
+
+  h3 {
+    font-size: 1.25 rem;
+  }
+
+  h4 {
+    font-size: 1.125 rem;
+  }
+
+  h5 {
+    font-size: 1 rem;
+  }
+
+  h6 {
+    font-size: 0.875 rem;
+  }
+
+  /* For Firefox */
   //  *{
   //   scrollbar-width: thin;
   //   scrollbar-color: #888 #f1f1f1;
   //  }
-  h3{
+  h3 {
     font-size: 1.25rem;
     font-weight: 600;
   }
-  h2{
+
+  h2 {
     font-size: 1.5rem;
     font-weight: 600;
   }
-  h1{
+
+  h1 {
     font-size: 2rem;
     font-weight: 600;
   }
-  h4{
+
+  h4 {
     font-size: 1rem;
     font-weight: 600;
   }
-  .header{
+
+  .header {
     position: fixed;
     width: calc(100vw - 140px);
-    top:0;
+    top: 0;
     left: 140px;
     z-index: 1;
-    .p-toolbar{
-        background-color: var(--p-slate-100);
-        border-radius: 0;
-        border:none
-    } 
-   }
+
+    .p-toolbar {
+      background-color: var(--p-slate-100);
+      border-radius: 0;
+      border: none
+    }
   }
+}
+
 @layer styles;
-
-
-
