@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FilterComponentComponent } from './filter-component/filter-component.component';
+import { FilterComponentComponent } from '../../shared-component/filter-component/filter-component.component';
 import { CardModule } from 'primeng/card';
-import { CustomersTableComponent } from './customers-table/customers-table.component';
+import { CustomersTableComponent } from '../../shared-component/customers-table/customers-table.component';
 @Component({
   selector: 'app-deal-manager',
   imports: [FilterComponentComponent, CardModule, CustomersTableComponent
