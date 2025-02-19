@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { DropdownModule } from 'primeng/dropdown';
+import { SelectModule } from 'primeng/select';
 import { InputTextModule } from 'primeng/inputtext';
 import { CustomersTableComponent } from '../customers-table/customers-table.component';
 
 @Component({
   selector: 'app-filter-component',
   imports: [
-    DropdownModule,
+    SelectModule,
     InputTextModule,
     ButtonModule,
     CardModule,

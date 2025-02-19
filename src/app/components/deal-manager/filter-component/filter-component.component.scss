@@ -12,29 +12,8 @@
     z-index: 0; 
 }
 
-
-.p-dropdown {
-    width: 100%;
-}
-
 .form-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px; 
-}
-.custom-scrollbar::-webkit-scrollbar {
-    width: 12px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
