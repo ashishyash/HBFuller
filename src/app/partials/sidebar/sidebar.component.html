@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<nav>
+    <ul>
+        @for (item of mainMenu; track $index) {
+            <li>
+                <a  routerLinkActive="active" [routerLink]="item.link">
+                    <span class=" {{'pi ' + item.icon}}"></span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

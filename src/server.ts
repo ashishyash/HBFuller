@@ -27,6 +27,9 @@ const commonEngine = new CommonEngine();
 /**
  * Serve static files from /browser
  */
+ app.get('/mockdata/**', (req, res ,next) => {
+   res.send(JSON)
+});
 app.get(
   '**',
   express.static(browserDistFolder, {

@@ -1,5 +1,8 @@
 .left-bar{
-    width: 150px;
+    width: 140px;
     height: 100vh;
     background-color: var(--p-blue-900);
+}
+.right-bar{
+    max-width: calc(100vw - 140px);
 }

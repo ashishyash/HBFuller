@@ -3,8 +3,7 @@
     <form [formGroup]="filterForm" class="p-2 flex gap-2 align-items-center">
         <span class="p-input-icon-left flex-grow-1 relative">
             <i class="pi pi-search absolute left-2 top-1/2 transform -translate-y-1/2"></i>
-            <input type="text" pInputText formControlName="searchQuery" placeholder="Search by Customer name or area..."
-                class="w-full pl-10" />
+            <input aria-label="search" type="text" pInputText formControlName="searchQuery" placeholder="Search by Customer name or area..." class="w-full pl-10" />
         </span>
         <p-select class="w-4 w-full" formControlName="businessUnit" [options]="businessUnits"
             placeholder="All Global Business Units"></p-select>
