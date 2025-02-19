@@ -2,7 +2,6 @@
 @use "../node_modules/primeflex/primeflex.css";
 
 @layer styles {
-
   html,
   body {
     font-family: "Inter", serif;
@@ -53,11 +52,6 @@
     font-size: 0.875 rem;
   }
 
-  /* For Firefox */
-  //  *{
-  //   scrollbar-width: thin;
-  //   scrollbar-color: #888 #f1f1f1;
-  //  }
   h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -83,23 +77,12 @@
     width: calc(100vw - 140px);
     top: 0;
     left: 140px;
-<<<<<<< HEAD
     z-index: 3;
-    .p-toolbar{
-        background-color: var(--p-slate-100);
-        border-radius: 0;
-        border:none
-    } 
-   }
-=======
-    z-index: 1;
-
     .p-toolbar {
       background-color: var(--p-slate-100);
       border-radius: 0;
-      border: none
+      border: none;
     }
->>>>>>> 4ce13ca560d441a33bee1ede2a9e2ea703bd0a02
   }
 }
 
