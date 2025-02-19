@@ -5,6 +5,8 @@ import { CardModule } from 'primeng/card';
 import { SelectModule } from 'primeng/select';
 import { InputTextModule } from 'primeng/inputtext';
 import { CustomersTableComponent } from '../customers-table/customers-table.component';
+import { RestService } from '../../services/rest.service';
+import { templateUrl } from '../../constant';
 
 @Component({
   selector: 'app-filter-component',
@@ -21,41 +23,57 @@ import { CustomersTableComponent } from '../customers-table/customers-table.comp
 })
 export class FilterComponentComponent {
   filterForm: FormGroup;
-  allCustomers = Array.from({ length: 50 }, (_, i) => ({
-    group: `Customer Group unit ${i + 1} region ${i + 1}`,
-    sales: `$${(Math.random() * 10000).toFixed(2)}`,
-  }));
-  customers = [...this.allCustomers];
+  allCustomers: { group: string, sales: number }[] = [];
+  customers: { group: string, sales: number }[] = [];
   columns = [
     { field: 'group', header: 'Customer Group' },
     { field: 'sales', header: 'Total sales (12 Months)' }
   ]
-  businessUnits = [
-    { label: 'All Global Business Units', value: null },
-    { label: 'Unit 1', value: 'unit 1' },
-    { label: 'Unit 2', value: 'unit 2' },
-  ];
-  businessRegions = [
-    { label: 'All Global Business Regions', value: null },
-    { label: 'Region 1', value: 'region 1' },
-    { label: 'Region 2', value: 'region 2' },
-  ];
+  businessUnits: any[] = [];
+  businessRegions: any[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private restService: RestService) {
     this.filterForm = this.fb.group({
       searchQuery: [''],
       businessUnit: [null],
       businessRegion: [null]
     });
+
+  }
+  ngOnInit() {
+    this.getAllCustomers();
+    this.getBusinessUnit();
+    this.getBusinessRegion();
     this.filterForm.valueChanges.subscribe(() => this.filterData());
   }
 
+  getAllCustomers() {
+    this.restService.getApi(`${templateUrl.customerGroup}`).subscribe((data: any) => {
+      data.forEach((element: any) => {
+        this.allCustomers.push({ group: element.salesRankGroupName, sales: element.biSales })
+      });
+      this.customers = [...this.allCustomers];
+    });
+  }
+  getBusinessUnit() {
+    this.restService.getApi(`${templateUrl.businessUnit}`).subscribe((data: any) => {
+      data.forEach((element: any) => {
+        this.businessUnits.push({ label: element.operatingSegmentName, value: element.operatingSegmentId })
+      });
+    });
+  }
+  getBusinessRegion() {
+    this.restService.getApi(`${templateUrl.businessRegion}`).subscribe((data: any) => {
+      data.forEach((element: any) => {
+        this.businessRegions.push({ label: element.businessRegionName, value: element.businessRegionId })
+      });
+    });
+  }
   filterData() {
     const { searchQuery, businessUnit, businessRegion } = this.filterForm.value;
     this.customers = this.allCustomers.filter(customer => {
       const matchesSearch = searchQuery
-        ? customer.group.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        customer.sales.toLowerCase().includes(searchQuery.toLowerCase())
+        ? customer.group.toLowerCase().includes(searchQuery.toLowerCase())
         : true;
       const matchesBusinessUnit = businessUnit ? customer.group.includes(businessUnit) : true;
       const matchesBusinessRegion = businessRegion ? customer.group.includes(businessRegion) : true;

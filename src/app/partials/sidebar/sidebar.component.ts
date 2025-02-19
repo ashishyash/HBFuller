@@ -10,17 +10,21 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent implements OnInit  {
+export class SidebarComponent implements OnInit {
   mainMenu: any[] = [];
-  constructor(private restService: RestService){}
+  constructor(private restService: RestService) { }
 
   ngOnInit() {
-   this.getMainMenu();
+    this.getMainMenu();
   }
 
   getMainMenu() {
     this.restService.getApi(`${templateUrl.mainMenu}`).subscribe((data: any) => {
       this.mainMenu = data;
-    });    
+    });
+  }
+  
+  trackByFn(index: number, item: any) {
+    return item.link
   }
 }

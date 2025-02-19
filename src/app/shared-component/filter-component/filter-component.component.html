@@ -5,9 +5,9 @@
             <i class="pi pi-search absolute left-2 top-1/2 transform -translate-y-1/2"></i>
             <input aria-label="search" type="text" pInputText formControlName="searchQuery" placeholder="Search by Customer name or area..." class="w-full pl-10" />
         </span>
-        <p-select class="w-4 w-full" formControlName="businessUnit" [options]="businessUnits"
+        <p-select class="w-4" formControlName="businessUnit" [options]="businessUnits"
             placeholder="All Global Business Units"></p-select>
-        <p-select class="w-4 w-full" formControlName="businessRegion" [options]="businessRegions"
+        <p-select class="w-4" formControlName="businessRegion" [options]="businessRegions"
             placeholder="All Business Regions"></p-select>
         <button pButton label="reset" class="p-button-text p-button-sm" (click)="resetFilters()" type="button"></button>
     </form>
