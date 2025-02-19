@@ -3,9 +3,11 @@ import { FilterComponentComponent } from '../../shared-component/filter-componen
 import { CardModule } from 'primeng/card';
 import { CustomersTableComponent } from '../../shared-component/customers-table/customers-table.component';
 import { RestService } from '../../services/rest.service';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-deal-manager',
-  imports: [FilterComponentComponent, CardModule, CustomersTableComponent
+  imports: [FilterComponentComponent, CardModule, CustomersTableComponent, SelectButtonModule , FormsModule
   ],
   templateUrl: './deal-manager.component.html',
   styleUrl: './deal-manager.component.scss',
@@ -18,6 +20,10 @@ export class DealManagerComponent {
     { field: 'sales3', header: 'BCust' },
     { field: 'sales4', header: 'CCust' }
   ];
+
+  stateOptions: any[] = [{ label: 'Customers', value: 'customers' },{ label: 'Quotations', value: 'quotations' }];
+
+  value: string = 'customers';
   marginColumn = [...this.salesColumn];
   salesData = Array.from({ length: 4 }, (_, i) => ({
     sales: 'content',

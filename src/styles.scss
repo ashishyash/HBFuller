@@ -71,6 +71,7 @@
     font-size: 1rem;
     font-weight: 600;
   }
+  
 
   .header {
     position: fixed;
@@ -84,6 +85,32 @@
       border: none;
     }
   }
+  .left-nav{
+    ul{
+        li{
+            a{
+                color: var(--p-blue-50);
+                &.active{
+                    background-color: var(--p-blue-100);
+                    color: var(--p-blue-950);
+                }
+            }
+        }
+    }
+  }
+
+  .p-selectbutton{
+    .p-togglebutton{
+        background-color: var(--p-blue-950);
+        border-width: 0;
+        color: var(--p-blue-50);
+        &.p-togglebutton-checked{
+            color: var(--p-blue-950);
+        }
+    }
 }
+}
+
+
 
 @layer styles;

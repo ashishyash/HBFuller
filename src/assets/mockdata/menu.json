@@ -1,53 +1,48 @@
 [
     {
         "title": "Home",
-        "icon": "pi-home",
-        "link": "/"
+        "icon": "pi pi-home",
+        "link": "/home"
     },
     {
         "title": "Setting",
-        "icon": "pi-cog",
+        "icon": "pi pi-cog",
         "link": "/deal-manager"
     },
     {
         "title": "User",
-        "icon": "pi-user",
+        "icon": "pi pi-user",
         "link": "/user"
     },
     {
         "title": "User",
-        "icon": "pi-megaphone",
-        "link": "/user"
+        "icon": "pi pi-megaphone",
+        "link": "/announcement"
     },
     {
         "title": "User",
-        "icon": "pi-bullseye",
-        "link": "/user"
+        "icon": "pi pi-bullseye",
+        "link": "/low"
     },
     {
         "title": "User",
-        "icon": "pi-bullseye",
-        "link": "/user"
+        "icon": "pi pi-lock-open",
+        "link": "/lock"
     },
     {
         "title": "User",
-        "icon": "pi-lock-open",
-        "link": "/user"
+        "icon": "pi pi-box",
+        "link": "/box"
     },
     {
         "title": "User",
-        "icon": "pi-box",
-        "link": "/user"
+        "icon": "pi pi-wrench",
+        "link": "/wrench"
     },
     {
         "title": "User",
-        "icon": "pi-wrench",
-        "link": "/user"
-    },
-    {
-        "title": "User",
-        "icon": "pi-chart-pie",
-        "link": "/user"
+        "icon": "pi pi-chart-pie",
+        "link": "/chart"
     }
 ]
 

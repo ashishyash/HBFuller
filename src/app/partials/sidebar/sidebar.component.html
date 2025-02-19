@@ -1,10 +1,10 @@
-<nav class="flex flex-column align-items-center justify-content-between p-3">
-    <h2 class="text-white">FLIP</h2>
-    <ul class="flex flex-column gap-3 align-items-center mt-4 list-none p-0">
+<nav class="left-nav flex flex-column align-items-center justify-content-between p-3">
+    <h1 class="text-primary">FLIP</h1>
+    <ul class="flex flex-column gap-3 mt-4 list-none p-0">
         @for (item of mainMenu; track $index) {
-            <li class="w-full">
-                <a pTooltip="{{item.title}}" tooltipPosition="right"   routerLinkActive="active" [routerLink]="item.link" class="flex align-items-center justify-content-center border-circlr w-4rem h-3rem text-decoration-none">
-                    <span class=" {{'pi ' + item.icon + ' text-white text-2xl'}}"></span>
+            <li>
+                <a pTooltip="{{item.title}}" tooltipPosition="right"   routerLinkActive="active" [routerLink]="item.link" class="border-round-sm flex align-items-center justify-content-center border-circlr w-4rem h-2rem">
+                    <span class=" {{item.icon + ' text-2xl'}}"></span>
                 </a>
             </li>
         }
