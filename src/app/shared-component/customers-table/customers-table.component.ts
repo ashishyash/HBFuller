@@ -12,5 +12,6 @@ export class CustomersTableComponent {
   @Input() data: any[] = [];
   @Input() columns: { field: string, header: string }[] = [];
   @Input() showCustomerCount: boolean = true;
-  @Input() showBorderColor: boolean = false;
+  @Input() showHeaderColor?: boolean;
+  @Input() showRowColor?: boolean;
 }

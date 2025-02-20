@@ -9,22 +9,24 @@
             </div>
         </div>
         <div class="col-12 md:col-6 lg:col-3">
-            <p-select class="w-full" formControlName="businessUnit" [options]="businessUnits"
+            <p-select class="w-full"
+                [pTooltip]="filterForm.get('businessUnit')?.value?.operatingSegmentName||'All Global Business Units'"
+                tooltipPosition="top" formControlName="businessUnit" [options]="businessUnits"
                 placeholder="All Global Business Units"></p-select>
         </div>
         <div class="col-12 md:col-6 lg:col-3">
-            <p-select class="w-full" formControlName="businessRegion" [options]="businessRegions"
-                placeholder="All Business Regions"></p-select>
+            <p-select class="w-full" formControlName="businessRegion"
+                [pTooltip]="filterForm.get('businessRegion')?.value?.businessRegionName||'All Business Regions'"
+                tooltipPosition="top" [options]="businessRegions" placeholder="All Business Regions"></p-select>
 
         </div>
         <div class="col-12 md:col-6 lg:col-2">
-            <button pButton label="reset" class="p-button-text p-button-sm" (click)="resetFilters()"
-                type="button"></button>
+            <p-button label="reset" variant="text" severity="info" (click)="resetFilters()" />
         </div>
 
     </form>
     <div class="grid">
-        <app-customers-table [data]="customers" [columns]="columns" [showCustomerCount]="true"
-            [showBorderColor]="true"></app-customers-table>
+        <app-customers-table [data]="customers" [columns]="columns" [showCustomerCount]="true" [showHeaderColor]="true"
+            [showRowColor]="true"></app-customers-table>
     </div>
 </p-card>

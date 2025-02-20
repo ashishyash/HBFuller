@@ -8,6 +8,7 @@ import { CustomersTableComponent } from '../customers-table/customers-table.comp
 import { RestService } from '../../services/rest.service';
 import { templateUrl } from '../../constant';
 import { debounceTime, filter } from 'rxjs';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-filter-component',
@@ -17,7 +18,8 @@ import { debounceTime, filter } from 'rxjs';
     ButtonModule,
     CardModule,
     ReactiveFormsModule,
-    CustomersTableComponent
+    CustomersTableComponent,
+    TooltipModule
   ],
   templateUrl: './filter-component.component.html',
   styleUrl: './filter-component.component.scss'
@@ -63,14 +65,14 @@ export class FilterComponentComponent {
   getBusinessUnit() {
     this.restService.getApi(`${templateUrl.businessUnit}`).subscribe((data: any) => {
       data.forEach((element: any) => {
-        this.businessUnits.push({ label: element.operatingSegmentName, value: element.operatingSegmentId })
+        this.businessUnits.push({ label: element.operatingSegmentName, value: element })
       });
     });
   }
   getBusinessRegion() {
     this.restService.getApi(`${templateUrl.businessRegion}`).subscribe((data: any) => {
       data.forEach((element: any) => {
-        this.businessRegions.push({ label: element.businessRegionName, value: element.businessRegionId })
+        this.businessRegions.push({ label: element.businessRegionName, value: element })
       });
     });
   }

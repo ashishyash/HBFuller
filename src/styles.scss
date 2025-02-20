@@ -2,6 +2,7 @@
 @use "../node_modules/primeflex/primeflex.css";
 
 @layer styles {
+
   html,
   body {
     font-family: "Inter", serif;
@@ -78,12 +79,14 @@
     top: 0;
     left: 140px;
     z-index: 3;
+
     .p-toolbar {
       background-color: var(--p-slate-100);
       border-radius: 0;
       border: none;
     }
   }
+
   .footer {
     .p-toolbar {
       background-color: var(--p-slate-200);
@@ -91,11 +94,13 @@
       border: none;
     }
   }
+
   .left-nav {
     ul {
       li {
         a {
           color: var(--p-blue-50);
+
           &.active {
             background-color: var(--p-blue-100);
             color: var(--p-blue-950);
@@ -110,14 +115,24 @@
       background-color: var(--p-blue-950);
       border-width: 0;
       color: var(--p-blue-50);
+
       &.p-togglebutton-checked {
         color: var(--p-blue-950);
       }
     }
   }
+
   .wrapper {
     background-color: var(--p-slate-50);
     min-height: calc(100vh - 104px);
+  }
+
+  .p-datatable .p-datatable-thead .custom-header {
+    background-color: var(--p-blue-200);
+  }
+
+  .p-datatable .p-datatable-tbody .custom-row:nth-child(odd) {
+    background-color: var(--p-slate-50);
   }
 }
 
