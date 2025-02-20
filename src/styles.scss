@@ -28,7 +28,16 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-
+ .text-info{
+  color: var(--p-blue-500);
+ }
+ .p-drawer{
+  margin-top:60px;
+}
+.p-drawer-header{
+  padding: 0px;
+  border-bottom: 2px solid var(--p-slate-200);
+}
   h1 {
     font-size: 2 rem;
   }

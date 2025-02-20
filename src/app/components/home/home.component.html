@@ -1,4 +1,48 @@
-<p>home works!</p>
-<div class="card flex justify-center">
-    <p-button severity="info" label="Check" />
+<div class="view-all-container p-3 flex justify-content-end surface-border">
+    <span class="text-600 text-sm font-medium" (click)="visible2 = true">>>> View All</span>
+    <span class="badge ml-2">3</span>
+    <div class="card">
+        <p-drawer [(visible)]="visible2" position="right">
+            <ng-template pTemplate="header">
+                <div class="custom-drawer-header">
+                    <span class="custom-close-icon" (click)="visible2 = false"><<</span>
+                </div>
+            </ng-template>
+            <div class="my-3">
+                <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
+                    aria-labelledby="basic" />
+            </div>
+        </p-drawer>
+        
+    </div> 
+</div>
+<div class="grid surface-0 align-items-center relative p-3 ml-2">
+    <div class="col-12 md:col-6 p-5">
+        <h3 class="text-lg text-600 p-2">Welcome to FLIP 3.0!</h3>
+        <h1 class="text-4xl font-bold text-info p-2">Your All-in-One <br> Pricing Management Solution</h1>
+        <p class="text-lg text-600 p-2">Flip is H.B. Fuller's customized pricing tool design to streamline and enhance your
+            pricing management workflow.
+        </p>
+        <p-card class="border-round-lg p-4 mt-4">
+            <div class="grid">
+                <div class="col-12 md:col-4">
+                    <p class="font-semibold text-center">Insert and approve customer quotations</p>
+
+                </div>
+                <div class="col-12 md:col-4">
+                    <p class="font-semibold text-center">Segment customer and materials</p>
+
+                </div>
+                <div class="col-12 md:col-4">
+                    <p class="font-semibold text-center">Monitor profitability with analytics</p>
+
+                </div>
+            </div>
+        </p-card>
+    </div>
+    <div class="col-12 md:col-6 flex justify-content-center">
+        <div class="image-wrapper">
+            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class="dashboard-image">
+        </div>
+    </div>
 </div>
