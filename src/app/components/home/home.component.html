@@ -1,23 +1,42 @@
 <div class="view-all-container p-3 flex justify-content-end border-1 surface-border">
-    <span class="text-600 text-sm font-medium" (click)="visible2 = true">>>> View All</span>
+    <span class="text-600 text-sm font-medium" (click)="visible2 = true">
+        << View All</span>
 
-    <p-badge [value]="2" severity="danger" class="ml-3" />
+            <p-badge [value]="2" severity="danger" class="ml-3" />
 
-    <div class="card">
-        <p-drawer [(visible)]="visible2" position="right">
-            <ng-template pTemplate="header">
-                <div class="custom-drawer-header">
-                    <span class="custom-close-icon" (click)="visible2 = false">
-                        << </span>
-                </div>
-            </ng-template>
-            <div class="my-3">
-                <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
-                    aria-labelledby="basic" />
+            <div class="card">
+                <p-drawer [(visible)]="visible2" position="right">
+                    <ng-template pTemplate="header">
+                        <div class="custom-drawer-header">
+                            <span class="custom-close-icon" (click)="visible2 = false">
+                                << </span>
+                        </div>
+                    </ng-template>
+                    <div class="my-3">
+                        <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label"
+                            optionValue="value" aria-labelledby="basic" />
+                        <div class="p-3 border-round border-1 surface-border shadow-2">
+                            <h3 class="flex align-items-center">My Action Items
+                                <p-badge [value]="actionItems.length" severity="danger" class="ml-3" />
+                            </h3>
+                            <div *ngFor="let action of actionItems"
+                                class="p-3 border-bottom-1 surface-border flex align-items-center justify-content-between">
+                                <div class="p-2">
+                                    <div class="text-sm font-semibold  flex align-items-center">
+                                        <span class="pi pi-circle-fill text-red-500 text-xs mr-2"></span>{{action.id}}
+                                    </div>
+                                    <div class="text-grey-600 text-sm">{{action.description}}</div>
+                                </div>
+                                <div class="text-right p-2">
+                                    <div class="text-xs text-grey-400">{{action.date}}</div>
+                                    <a href="{{action.link}}" class="text-blue-500 text-xs">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p-drawer>
+
             </div>
-        </p-drawer>
-
-    </div>
 </div>
 <div class="p-3">
     <div class="grid surface-0 align-items-center relative p-3 ml-2">
@@ -46,9 +65,7 @@
             </p-card>
         </div>
         <div class="col-12 md:col-6 flex justify-content-center">
-
-            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class=" responsive">
-
+            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class="responsive">
         </div>
     </div>
 </div>
