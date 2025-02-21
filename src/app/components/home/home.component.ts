@@ -27,7 +27,7 @@ export class HomeComponent {
   {
     time: '03:00', title: 'Flip Mobile Access Link', description: 'following the recent enforcement of VPN access, some users reported experiencing difficulties accessing flip on mobile devices.',
     link: '#'
-  },{}
+  }
   ]
   actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
   { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' }

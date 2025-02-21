@@ -148,7 +148,7 @@
   }
 
   .p-breadcrumb {
-    background-color: var(--p-slate-50)
+    background-color: var(--p-slate-50);
   }
 
   .p-timeline .p-timeline-event-marker {
@@ -160,6 +160,13 @@
   }
   .p-timeline .p-timeline-event-opposite{
     flex: 0;
+  }
+  .p-timeline-event-separator{
+    border-left: 2px solid;
+    border-left-color:  var(--p-grey-100);
+  }
+  .p-drawer-right{
+    width: 35rem;
   }
 }
 

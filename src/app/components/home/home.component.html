@@ -65,13 +65,14 @@
             </p-card>
         </div>
         <div class="col-12 md:col-6 flex justify-content-center">
-            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class="responsive">
+            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class=" responsive">
         </div>
     </div>
 </div>
 <div class="p-3">
     <div class="grid">
         <div class="col-12 md:col-8 lg:col-8 p-3">
+            <p-card class="bg-white">
             <h3 class="text-green-600 font-semibold p-3">News and Announcements</h3>
             <p-timeline [value]="news" class="p-3">
                 <ng-template #opposite let-item>
@@ -87,6 +88,7 @@
                     </div>
                 </ng-template>
             </p-timeline>
+        </p-card>
         </div>
         <div class="col-12 md:col-4 lg:col-4 p-3">
             <div class="p-3 border-round border-1 surface-border shadow-2">
