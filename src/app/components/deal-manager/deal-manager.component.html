@@ -23,32 +23,35 @@
         <div class="col">
             <app-filter-component></app-filter-component>
         </div>
-        <div class="col">
-            <h3 class="font-bold mb-3">Performance</h3>
-            <div class="grid">
-                <div class="col">
-                    <p-card class="flex flex-column">
-                        <h4 class="p-2 text-green-500">Sales $</h4>
-                        <app-chart></app-chart>
-                        <!-- <app-customers-table [data]="salesData" [columns]="salesColumn"
-                            [showCustomerCount]="false"></app-customers-table> -->
-                    </p-card>
-                </div>
-                <div class="col">
-                    <p-card class="flex flex-column">
-                        <h4 class="p-2 text-green-500">Contribution Margin $</h4>
-                        <app-customers-table [data]="marginData" [columns]="marginColumn"
-                            [showCustomerCount]="false"></app-customers-table>
-                    </p-card>
-                </div>
-                <div class="col">
-                    <p-card class="flex flex-column">
-                        <h4 class="p-2 text-green-500">Contribution Margin $</h4>
-                        <app-customers-table [data]="marginData" [columns]="marginColumn"
-                            [showCustomerCount]="false"></app-customers-table>
-                    </p-card>
+        @if (chartData) {
+            <div class="col">
+                <h3 class="font-bold mb-3">Performance</h3>
+                <div class="grid">
+                    <div class="col">
+                        <p-card class="flex flex-column">
+                            <h4 class="p-2 text-green-500">Sales $</h4>
+                            <app-chart [chartData]="salesChartData"></app-chart>
+                            <!-- <app-customers-table [data]="salesData" [columns]="salesColumn"
+                                [showCustomerCount]="false"></app-customers-table> -->
+                        </p-card>
+                    </div>
+                    <div class="col">
+                        <p-card class="flex flex-column">
+                            <p-select [options]="contributionTypeData" [(ngModel)]="selectedContributionType" optionLabel="name" placeholder="Contribution Type" />
+                            @if (selectedContributionType.value === '%') {
+                                <app-chart [chartData]="contributionChartData"></app-chart>
+                            }
+                            @if (selectedContributionType.value === '$') {
+                                <app-chart [chartData]="contributionChartDataPercent"></app-chart>
+                            }  
+                            <!-- <app-customers-table [data]="marginData" [columns]="marginColumn"
+                                [showCustomerCount]="false"></app-customers-table> -->
+                        </p-card>
+                    </div>
+                    
                 </div>
             </div>
-        </div>
+        }
+        
     </div>
 </div>
