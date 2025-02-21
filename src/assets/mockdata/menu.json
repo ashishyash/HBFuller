@@ -5,44 +5,51 @@
         "link": "/home"
     },
     {
-        "title": "Setting",
+        "title": "Price Setting",
         "icon": "pi pi-cog",
+        "link": "/price setting"
+    },
+    {
+        "title": "Deal Manager",
+        "icon": "pi pi-user",
         "link": "/deal-manager"
     },
     {
-        "title": "User",
-        "icon": "pi pi-user",
-        "link": "/user"
-    },
-    {
-        "title": "User",
-        "icon": "pi pi-megaphone",
-        "link": "/announcement"
-    },
-    {
-        "title": "User",
+        "title": "Campain Setting",
         "icon": "pi pi-bullseye",
-        "link": "/low"
+        "link": "/campain-setting"
     },
     {
-        "title": "User",
-        "icon": "pi pi-lock-open",
-        "link": "/lock"
+        "title": "Campain Manager",
+        "icon": "pi pi-megaphone",
+        "link": "/campain-manager"
     },
     {
-        "title": "User",
+        "title": "Product Line",
         "icon": "pi pi-box",
-        "link": "/box"
+        "link": "/product-line"
     },
     {
-        "title": "User",
-        "icon": "pi pi-wrench",
-        "link": "/wrench"
+        "title": "Price List Manager",
+        "icon": "pi pi-list",
+        "link": "/price-list-manager"
     },
     {
-        "title": "User",
+        "title": "Price Locks",
+        "icon": "pi pi-lock",
+        "link": "/price-locks"
+    },
+    {
+        "title": "Reports",
         "icon": "pi pi-chart-pie",
-        "link": "/chart"
+        "link": "/reports"
+    },
+    
+    {
+        "title": "Admin",
+        "icon": "pi pi-wrench",
+        "link": "/admin"
     }
+    
 ]
 

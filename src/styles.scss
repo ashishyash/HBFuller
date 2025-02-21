@@ -143,6 +143,9 @@
   .p-datatable .p-datatable-tbody .custom-row:nth-child(odd) {
     background-color: var(--p-slate-50);
   }
+  .p-breadcrumb{
+    background-color: var(--p-slate-50)
+  }
 }
 
 @layer styles;

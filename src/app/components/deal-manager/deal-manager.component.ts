@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { FilterComponentComponent } from '../../shared-component/filter-component/filter-component.component';
 import { CardModule } from 'primeng/card';
 import { CustomersTableComponent } from '../../shared-component/customers-table/customers-table.component';
-import { RestService } from '../../services/rest.service';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { MenuItem } from 'primeng/api';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ChartComponent } from '../../shared-component/chart/chart.component';
+import { RestService } from '../../services/rest.service';
+import { templateUrl } from '../../constant';
 
 @Component({
   selector: 'app-deal-manager',
@@ -20,16 +22,16 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     BreadcrumbModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    ChartComponent
   ],
   templateUrl: './deal-manager.component.html',
   styleUrl: './deal-manager.component.scss',
 })
 export class DealManagerComponent {
   items: MenuItem[] | undefined;
-
-  home: MenuItem | undefined;
-
+  chartData:any;
+  chartLabels: string[] = []
   salesColumn = [
     { field: 'sales', header: 'Sales $' },
     { field: 'sales1', header: 'All Cust' },
@@ -51,8 +53,23 @@ export class DealManagerComponent {
   }));
   marginData = [...this.salesData];
 
-  constructor() { }
+  constructor(private restService: RestService) { }
   ngOnInit() {
-    this.items = [{ label: 'Deal-Manager', route: '/deal-manager' },{ label: 'Customers' }];
-}
+    this.items = [{ label: 'Deal-Manager', route: '/deal-manager' }, { label: 'Customers' }];
+    this.getChartData();
+  }
+  getChartData() {
+    this.restService.getApi(`${templateUrl.charData}`).subscribe((data: any) => {
+      this.chartData = data;
+      console.log(this.chartData);
+     for(const key in this.chartData){
+      if(this.chartData.hasOwnProperty(key)){
+        if(key.includes('sales') && this.chartData[key]){
+          this.chartLabels.push(key);
+        }
+      }
+     }
+     console.log(this.chartLabels)
+    });
+  }
 }
