@@ -1,0 +1,17 @@
+<p-card class="bg-white">
+    <h3 class="text-green-600 font-semibold p-3">News and Announcements</h3>
+    <p-timeline [value]="news" class="p-3">
+        <ng-template #opposite let-item>
+            <small class="text-surface-500 dark:text-surface-400">Today <br>
+                {{item?.time}}</small>
+        </ng-template>
+        <ng-template pTemplate="content" let-item>
+            <div class="">
+                <div class="font-bold text-lg mb-3">{{item?.title}}</div>
+                <p class="text-grey-600">{{item?.description}}</p>
+                <a href="{{item.link}}" class="text-blue-500 cursor-pointer">Flip Mobile
+                    Access Link</a>
+            </div>
+        </ng-template>
+    </p-timeline>
+</p-card>
