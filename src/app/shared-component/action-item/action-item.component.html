@@ -1,0 +1,21 @@
+@if (actionItems) {
+<div class="p-3 border-round border-1 surface-border shadow-2">
+    <h3 class="flex align-items-center">{{actionItemHeading}}
+        <p-badge [value]="actionItems.length" severity="danger" class="ml-3" />
+    </h3>
+    @for (action of actionItems; track $index) {
+    <div class="p-3 border-bottom-1 surface-border flex align-items-center justify-content-between">
+        <div class="p-2">
+            <div class="text-sm font-semibold  flex align-items-center">
+                <span class="pi pi-circle-fill text-red-500 text-xs mr-2"></span>{{action.id}}
+            </div>
+            <div class="text-grey-600 text-sm">{{action.description}}</div>
+        </div>
+        <div class="text-right p-2">
+            <div class="text-xs text-grey-400">{{action.date}}</div>
+            <a href="{{action.link}}" class="text-blue-500 text-xs">View</a>
+        </div>
+    </div>
+    }
+</div>
+}

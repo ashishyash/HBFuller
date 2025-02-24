@@ -1,41 +1,9 @@
 <div class="view-all-container p-3 flex justify-content-end border-1 surface-border">
-    <span class="text-600 text-sm font-medium" (click)="visible2 = true">
+    <span class="text-600 text-sm font-medium cursor-pointer" (click)="resetvisibility()">
         << View All</span>
-
             <p-badge [value]="2" severity="danger" class="ml-3" />
-
-            <div class="card">
-                <p-drawer [(visible)]="visible2" position="right">
-                    <ng-template pTemplate="header">
-                        <div class="custom-drawer-header">
-                            <span class="custom-close-icon" (click)="visible2 = false">
-                                << </span>
-                        </div>
-                    </ng-template>
-                    <div class="my-3">
-                        <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label"
-                            optionValue="value" aria-labelledby="basic" />
-                        <div class="p-3 border-round border-1 surface-border shadow-2">
-                            <h3 class="flex align-items-center">My Action Items
-                                <p-badge [value]="actionItems.length" severity="danger" class="ml-3" />
-                            </h3>
-                            <div *ngFor="let action of actionItems"
-                                class="p-3 border-bottom-1 surface-border flex align-items-center justify-content-between">
-                                <div class="p-2">
-                                    <div class="text-sm font-semibold  flex align-items-center">
-                                        <span class="pi pi-circle-fill text-red-500 text-xs mr-2"></span>{{action.id}}
-                                    </div>
-                                    <div class="text-grey-600 text-sm">{{action.description}}</div>
-                                </div>
-                                <div class="text-right p-2">
-                                    <div class="text-xs text-grey-400">{{action.date}}</div>
-                                    <a href="{{action.link}}" class="text-blue-500 text-xs">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </p-drawer>
-
+            <div>
+                <app-drawer (resetVisible)="resetvisibility()" [visible]="visible"></app-drawer>
             </div>
 </div>
 <div class="p-3">
@@ -65,48 +33,17 @@
             </p-card>
         </div>
         <div class="col-12 md:col-6 flex justify-content-center">
-            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class="responsive">
+            <img src="assets/images/mask-group.png" alt="dashboard-mockup" class=" responsive">
         </div>
     </div>
 </div>
 <div class="p-3">
     <div class="grid">
         <div class="col-12 md:col-8 lg:col-8 p-3">
-            <h3 class="text-green-600 font-semibold p-3">News and Announcements</h3>
-            <p-timeline [value]="news" class="p-3">
-                <ng-template #opposite let-item>
-                    <small *ngIf="item.time" class="text-surface-500 dark:text-surface-400">Today <br>
-                        {{item?.time}}</small>
-                </ng-template>
-                <ng-template pTemplate="content" let-item>
-                    <div class="">
-                        <div class="font-bold text-lg mb-3">{{item?.title}}</div>
-                        <p class="text-grey-600">{{item?.description}}</p>
-                        <a *ngIf="item.link" href="{{item.link}}" class="text-blue-500 cursor-pointer">Flip Mobile
-                            Access Link</a>
-                    </div>
-                </ng-template>
-            </p-timeline>
+            <app-timeline></app-timeline>
         </div>
         <div class="col-12 md:col-4 lg:col-4 p-3">
-            <div class="p-3 border-round border-1 surface-border shadow-2">
-                <h3 class="flex align-items-center">My Action Items
-                    <p-badge [value]="actionItems.length" severity="danger" class="ml-3" />
-                </h3>
-                <div *ngFor="let action of actionItems"
-                    class="p-3 border-bottom-1 surface-border flex align-items-center justify-content-between">
-                    <div class="p-2">
-                        <div class="text-sm font-semibold  flex align-items-center">
-                            <span class="pi pi-circle-fill text-red-500 text-xs mr-2"></span>{{action.id}}
-                        </div>
-                        <div class="text-grey-600 text-sm">{{action.description}}</div>
-                    </div>
-                    <div class="text-right p-2">
-                        <div class="text-xs text-grey-400">{{action.date}}</div>
-                        <a href="{{action.link}}" class="text-blue-500 text-xs">View</a>
-                    </div>
-                </div>
-            </div>
+            <app-action-item [actionItemHeading]="actionItemHeading" [actionItems]="actionItems"></app-action-item>
         </div>
     </div>
 </div>

@@ -1,0 +1,14 @@
+<p-drawer [(visible)]="visible" position="right">
+    <ng-template pTemplate="header">
+        <div class="custom-drawer-header">
+            <span class="custom-close-icon cursor-pointer" (click)="resetVisibility()">
+                << </span>
+        </div>
+    </ng-template>
+    <div class="my-3">
+        <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label"
+            optionValue="value" aria-labelledby="basic" />
+            <app-action-item [actionItemHeading]="actionItemHeading" [actionItems]="actionItems"></app-action-item>
+    </div>
+</p-drawer>
+
