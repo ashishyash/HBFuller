@@ -19,7 +19,7 @@ export class DrawerComponent {
   @Input() visible: boolean = false;
   @Output() resetVisible = new EventEmitter<boolean>();
 
-  stateOptions: any[] = [{ label: 'Notifications', value: 'notifications' }, { label: 'Trainiing Links', value: 'trainiingLinks' }];
+  stateOptions: any[] = [{ label: 'Notifications', value: 'notifications' }, { label: 'Training Links', value: 'trainiingLinks' }];
   value: string = 'notifications';
   actionItemHeading = 'Total Items';
   actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
