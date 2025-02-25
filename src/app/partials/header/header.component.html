@@ -1,6 +1,6 @@
 <p-toolbar class="header">
     <ng-template #start >
-        <h3>Deal Manager</h3>
+        <h3>{{pageTitle}}</h3>
     </ng-template>
     <ng-template #center>
         <!-- <p-iconfield iconPosition="left">
@@ -9,6 +9,6 @@
         </p-iconfield> -->
     </ng-template>
     <ng-template #end>
-        <p-splitbutton appendTo="body" label="Save" [model]="items" />
+        <p-select [options]="items" (onChange)="updateCurrency()" [(ngModel)]="selectedItem" optionLabel="name" placeholder="Select Currency" class="w-full md:w-56" />
     </ng-template>
 </p-toolbar>

@@ -18,15 +18,15 @@
             aria-labelledby="basic" />
     </div>
     <div class="grid">
-        <div class=" col-6 ">
+        <div class=" md:col-6 sm:col-12">
             <app-filter-component></app-filter-component>
         </div>
         @if (chartData) {
-        <div class="col-6 ">
+        <div class="md:col-6 sm:col-12">
             <h3 class="font-bold mb-3">Performance</h3>
             <div>
                 <p-card class="flex flex-column mb-3">
-                    <h4 class="p-2 text-green-500">Sales $</h4>
+                    <h4 class="p-2 text-green-500">Sales <span>{{currency}}</span></h4>
                     <app-chart [chartData]="salesChartData"></app-chart>
                 </p-card>
                 <p-card class="flex flex-column">

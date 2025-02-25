@@ -1,4 +1,4 @@
-import { Component, inject, Input, PLATFORM_ID } from '@angular/core';
+import { Component, effect, inject, PLATFORM_ID } from '@angular/core';
 import { FilterComponentComponent } from '../../shared-component/filter-component/filter-component.component';
 import { CardModule } from 'primeng/card';
 import { CustomersTableComponent } from '../../shared-component/customers-table/customers-table.component';
@@ -6,12 +6,13 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { MenuItem } from 'primeng/api';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ChartComponent } from '../../shared-component/chart/chart.component';
 import { RestService } from '../../services/rest.service';
 import { templateUrl } from '../../constant';
 import { SelectModule } from 'primeng/select';
+import { CommonService } from '../../services/common.service';
 
 interface Chart {
   labels: string[],
@@ -72,13 +73,17 @@ export class DealManagerComponent {
   marginData = [...this.salesData];
   contributionTypeData: ContributionType[] = [];
   selectedContributionType:ContributionType = {name:'Contrubution Margin %',value:'%'};
-
-  constructor(private restService: RestService) { }
+  currency: string = '';
+  constructor(private restService: RestService, private commonService: CommonService) {
+     effect(() => {
+      this.currency = this.commonService.getCurrency()();
+    });
+  }
+  
   ngOnInit() {
     this.contributionTypeData = [{name: 'Contrubution Margin %', value: '%'}, {name: 'Contrubution Margin $', value: '$'}]
     this.items = [{ label: 'Deal-Manager', route: '/deal-manager' }, { label: 'Customers' }];
     this.getChartData();
-
   }
   getChartData() {
     this.restService.getApi(`${templateUrl.charData}`).subscribe((data: any) => {
@@ -124,5 +129,6 @@ export class DealManagerComponent {
         }
       }
     });
+    
   }
 }
