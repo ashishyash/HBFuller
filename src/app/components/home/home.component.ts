@@ -22,8 +22,9 @@ export class HomeComponent {
   ];
   actionItemHeading = 'My Action Items';
 
-  resetvisibility(): void {
+  resetVisibility(): void {
     this.visible = !this.visible;
 
   }
+  
 }

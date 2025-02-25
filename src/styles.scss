@@ -158,15 +158,49 @@
   .p-timeline .p-timeline-event {
     margin-bottom: 2rem;
   }
-  .p-timeline .p-timeline-event-opposite{
+
+  .p-timeline .p-timeline-event-opposite {
     flex: 0;
   }
-  .p-timeline-event-separator{
+
+  .p-timeline-event-separator {
     border-left: 2px solid;
-    border-left-color:  var(--p-grey-100);
+    border-left-color: var(--p-grey-100);
   }
-  .p-drawer-right{
+
+  .p-drawer-right {
     width: 35rem;
+  }
+
+  @media (max-width: 768px) {
+    .p-drawer-right {
+      width: 25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .p-drawer-right {
+      width: 20rem;
+    }
+  }
+
+  .p-message-warning {
+    background-color: var(--p-yellow-100);
+
+  }
+
+  .p-message-warning h4 {
+    color: var(--p-yellow-700);
+  }
+
+  .p-message-warning .pi-exclamation-triangle {
+    color: var(--p-yellow-700);
+  }
+
+  .p-badge-circle {
+    border-radius: 4px;
+    background-color: var(--p-red-200);
+    color: var(--p-red-600);
   }
 }
 

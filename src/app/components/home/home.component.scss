@@ -1,6 +1,14 @@
 
 .view-all-container{
-    background-color: var(--surface-b);
+    background-color:  var(--p-grey-300);
 }
-
+.custom-warn{
+    display: inline-grid;
+}
+.background-image {
+    background-image: url('../../../assets/images/home-page.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+}
 
