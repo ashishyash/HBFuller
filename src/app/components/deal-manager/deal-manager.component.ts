@@ -81,7 +81,7 @@ export class DealManagerComponent {
   }
   
   ngOnInit() {
-    this.contributionTypeData = [{name: 'Contrubution Margin %', value: '%'}, {name: 'Contrubution Margin $', value: '$'}]
+    this.contributionTypeData = [{name: 'Contribution Margin %', value: '%'}, {name: 'Contribution Margin $', value: '$'}]
     this.items = [{ label: 'Deal-Manager', route: '/deal-manager' }, { label: 'Customers' }];
     this.getChartData();
   }
