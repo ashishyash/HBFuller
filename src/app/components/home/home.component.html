@@ -2,7 +2,7 @@
     <span class="text-600 text-sm font-medium cursor-pointer d-flex align-items-center" (click)="resetVisibility()">
         <i class="pi pi-angle-double-left mr-2"></i> View All
     </span>
-    <p-badge [value]="2" severity="danger" class="ml-3"></p-badge>
+    <p-badge [value]="3" severity="danger" class="ml-3"></p-badge>
     <div>
         <app-drawer (resetVisible)="resetVisibility()" [visible]="visible"></app-drawer>
     </div>
@@ -51,13 +51,12 @@
 </div>
 <div class="p-3">
     <div class="grid">
-        <div class="col-12 md:col-8 lg:col-8 p-3">
+        <div class="col-12 md:col-8 lg:col-8 p-3 flex align-items-stretch">
             <app-timeline></app-timeline>
         </div>
-        <div class="col-12 md:col-4 lg:col-4 p-3">
-            <div class="border-round border-1 surface-border shadow-2">
+        <div class="col-12 md:col-4 lg:col-4 p-3 flex align-items-stretch">
+            <div class="border-round border-1 surface-border shadow-2 flex align-items-stretch">
                 <app-action-item [actionItemHeading]="actionItemHeading" [actionItems]="actionItems"></app-action-item>
-
             </div>
         </div>
     </div>

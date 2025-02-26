@@ -202,6 +202,12 @@
     background-color: var(--p-red-200);
     color: var(--p-red-600);
   }
+
+  .pi-spin, .page-not-found h2 {
+    color: var(--p-amber-600);
+    font-weight: 400;
+  }
+
 }
 
 @layer styles;
