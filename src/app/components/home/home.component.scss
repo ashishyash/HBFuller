@@ -11,4 +11,16 @@
     background-position: center;
     background-repeat: no-repeat; 
 }
-
+@media (max-width: 768px) {
+    .custom-warn {
+        display: block;
+        text-align: center;
+    }
+    .p-message {
+        flex-direction: column;
+        align-items: center;
+    }
+    .p-message i {
+        margin-bottom: 10px;
+    }
+}
