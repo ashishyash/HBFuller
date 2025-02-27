@@ -19,14 +19,24 @@ export class DrawerComponent {
   @Input() visible: boolean = false;
   @Output() resetVisible = new EventEmitter<boolean>();
 
-  stateOptions: any[] = [{ label: 'My Campaign Action Items', value: 'MyCampaignActionItems' },{ label: 'Notifications', value: 'notifications' }, { label: 'Training Links', value: 'trainiingLinks' }];
-  value: string = 'MyCampaignActionItems';
+  stateOptions: any[] = [
+    { label: 'My Campaign Action Items', value: 'myCampaignActionItems' }, { label: 'Notifications', value: 'notifications' }, { label: 'Training Links', value: 'trainingLinks' }];
+  value: string = 'myCampaignActionItems';
   actionItemHeading = 'Total Items';
   actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' },
+  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' }
+  ];
+  notificationHeading = 'Total Notifications';
+  notificationActionItems = [{ id: 'NV-121', description: 'Review Quotation', date: '24 June', link: '#' },
+  { id: 'NV-120', description: 'Approval Pending', date: '21 June', link: '#' },
   { id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' }
   ];
-
+  trainingHeading = 'Total Trainings';
+  trainingActionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
+  { id: 'TV-120', description: 'Approval Pending', date: '21 June', link: '#' },
+  { id: 'TV-121', description: 'Review Quotation', date: '24 June', link: '#' },
+  { id: 'TV-121', description: 'Review Quotation', date: '24 June', link: '#' }
+  ];
   resetVisibility(): void {
     this.visible = false;
     this.resetVisible.emit(this.visible);

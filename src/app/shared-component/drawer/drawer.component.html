@@ -7,7 +7,15 @@
     </ng-template>
     <div class="my-3">
         <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
-            aria-labelledby="basic" />
+            aria-labelledby="basic"></p-selectbutton>
+        @if(value === 'myCampaignActionItems'){
         <app-action-item [actionItemHeading]="actionItemHeading" [actionItems]="actionItems"></app-action-item>
+        }@if(value === 'notifications'){
+        <app-action-item [actionItemHeading]="notificationHeading"
+            [actionItems]="notificationActionItems"></app-action-item>
+        }@if(value === 'trainingLinks'){
+        <app-action-item [actionItemHeading]="trainingHeading" [actionItems]="trainingActionItems"></app-action-item>
+        }
+
     </div>
 </p-drawer>
