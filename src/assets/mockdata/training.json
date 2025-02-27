@@ -1,0 +1,29 @@
+{
+    "actionItemHeading": "Total Trainings",
+    "actionItems": [
+        {
+            "id": "Training-121",
+            "description": "Review Quotation",
+            "date": "24 June",
+            "link": ""
+        },
+        {
+            "id": "Training-120",
+            "description": "Approval Pending",
+            "date": "21 June",
+            "link": ""
+        },
+        {
+            "id": "Training-120",
+            "description": "Approval Pending",
+            "date": "21 June",
+            "link": ""
+        },
+        {
+            "id": "Training-120",
+            "description": "Approval Pending",
+            "date": "21 June",
+            "link": ""
+        }
+    ]
+}

@@ -8,6 +8,8 @@ import { BadgeModule } from 'primeng/badge';
 import { TimelineComponent } from '../../shared-component/timeline/timeline.component';
 import { DrawerComponent } from '../../shared-component/drawer/drawer.component';
 import { ActionItemComponent } from '../../shared-component/action-item/action-item.component';
+import { RestService } from '../../services/rest.service';
+import { templateUrl } from '../../constant';
 @Component({
   selector: 'app-home',
   imports: [ButtonModule, CardModule, FormsModule,
@@ -17,15 +19,25 @@ import { ActionItemComponent } from '../../shared-component/action-item/action-i
 })
 export class HomeComponent {
   visible: boolean = false;
-  actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' },
-  { id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' }
-  ];
-  actionItemHeading = 'My Action Items';
+  actionItemHeading: string = '';
+  actionItems: { id: string, description: string, date: string, link: string }[] = [];
+
+  constructor(private restService: RestService) {
+
+  }
+  ngOnInit() {
+    this.getCampaignActionsData();
+  }
+
+  getCampaignActionsData() {
+    this.restService.getApi(`${templateUrl.campaignActionItemsData}`).subscribe((data: any) => {
+      this.actionItemHeading = 'My Action Items';
+      this.actionItems = data.actionItems;
+    });
+  }
 
   resetVisibility(): void {
     this.visible = !this.visible;
 
   }
-  
 }

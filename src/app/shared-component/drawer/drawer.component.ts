@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { DrawerModule } from 'primeng/drawer';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ActionItemComponent } from '../action-item/action-item.component';
+import { RestService } from '../../services/rest.service';
+import { templateUrl } from '../../constant';
 
 @Component({
   selector: 'app-drawer',
@@ -22,21 +24,40 @@ export class DrawerComponent {
   stateOptions: any[] = [
     { label: 'My Campaign Action Items', value: 'myCampaignActionItems' }, { label: 'Notifications', value: 'notifications' }, { label: 'Training Links', value: 'trainingLinks' }];
   value: string = 'myCampaignActionItems';
-  actionItemHeading = 'Total Items';
-  actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' }
-  ];
-  notificationHeading = 'Total Notifications';
-  notificationActionItems = [{ id: 'NV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'NV-120', description: 'Approval Pending', date: '21 June', link: '#' },
-  { id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' }
-  ];
-  trainingHeading = 'Total Trainings';
-  trainingActionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'TV-120', description: 'Approval Pending', date: '21 June', link: '#' },
-  { id: 'TV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'TV-121', description: 'Review Quotation', date: '24 June', link: '#' }
-  ];
+  actionItemHeading: string = '';
+  actionItems: { id: string, description: string, date: string, link: string }[] = [];
+  notificationHeading: string = '';
+  notificationActionItems: { id: string, description: string, date: string, link: string }[] = [];
+  trainingHeading: string = '';
+  trainingActionItems: { id: string, description: string, date: string, link: string }[] = [];
+
+  constructor(private restService: RestService) {
+
+  }
+  ngOnInit() {
+    this.getCampaignActionsData();
+    this.getNotificationdata();
+    this.getTrainingdata();
+  }
+
+  getCampaignActionsData() {
+    this.restService.getApi(`${templateUrl.campaignActionItemsData}`).subscribe((data: any) => {
+      this.actionItemHeading = data.actionItemHeading;
+      this.actionItems = data.actionItems;
+    });
+  }
+  getNotificationdata() {
+    this.restService.getApi(`${templateUrl.notificationData}`).subscribe((data: any) => {
+      this.notificationHeading = data.actionItemHeading;
+      this.notificationActionItems = data.actionItems;
+    });
+  }
+  getTrainingdata() {
+    this.restService.getApi(`${templateUrl.trainingData}`).subscribe((data: any) => {
+      this.trainingHeading = data.actionItemHeading;
+      this.trainingActionItems = data.actionItems;
+    });
+  }
   resetVisibility(): void {
     this.visible = false;
     this.resetVisible.emit(this.visible);
