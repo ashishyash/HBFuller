@@ -3,7 +3,7 @@
     <ul class="flex flex-column gap-3 mt-4 list-none p-0">
         @for (item of mainMenu; track $index) {
             <li>
-                <a pTooltip="{{item.title}}" tooltipPosition="right"   routerLinkActive="active" [routerLink]="item.link" class="border-round-sm flex align-items-center justify-content-center border-circlr w-4rem h-2rem">
+                <a pTooltip="{{item.title}}" tooltipPosition="right" (click)="toggleSidebar()"  routerLinkActive="active" [routerLink]="item.link" class="border-round-sm flex align-items-center justify-content-center border-circlr w-4rem h-2rem">
                     <span class=" {{item.icon + ' text-2xl'}}"></span>
                 </a>
             </li>

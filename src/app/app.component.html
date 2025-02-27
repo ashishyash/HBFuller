@@ -1,7 +1,9 @@
 <main class="layout flex">
-    <app-sidebar class="left-bar"/>
+    @if (isSidebarActive) {
+    <app-sidebar class="left-bar" (toggleSidebarVal)="(isSidebarActive= $event)" [isSidebarActive]="isSidebarActive" />
+    }
     <div class="right-bar flex-auto">
-        <app-header />
+        <app-header (toggleSidebarVal)="(isSidebarActive= $event)" [isSidebarActive]="isSidebarActive" />
         <div class="wrapper">
             <router-outlet />
         </div>

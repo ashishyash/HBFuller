@@ -1,6 +1,7 @@
 <p-toolbar class="header">
-    <ng-template #start >
-        <h3>{{pageTitle}}</h3>
+    <ng-template #start>
+        <i class="pi pi-bars hamburger cursor-pointer" (click)="toggleSidebar()"></i>
+        <h3 class="ml-2">{{pageTitle}}</h3>
     </ng-template>
     <ng-template #center>
         <!-- <p-iconfield iconPosition="left">

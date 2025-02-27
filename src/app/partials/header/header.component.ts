@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
@@ -15,12 +15,15 @@ import { CommonService } from '../../services/common.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  items: {name: string, value: string}[] = [];
-  selectedItem: {name: string, value: string} = {name: 'USD', value: '$'};
+  items: { name: string, value: string }[] = [];
+  selectedItem: { name: string, value: string } = { name: 'USD', value: '$' };
   pageTitle: string = '';
+  @Input() isSidebarActive: boolean = false;
+  @Output() toggleSidebarVal = new EventEmitter<boolean>();
+  
   constructor(private router: Router, private commonService: CommonService) {
-   
-   }
+
+  }
 
   ngOnInit() {
     this.items = [
@@ -51,9 +54,12 @@ export class HeaderComponent {
     });
   }
 
-  updateCurrency(){
+  updateCurrency() {
     this.commonService.setCurrency(this.selectedItem.value);
   }
 
-
+  toggleSidebar() {
+    this.isSidebarActive = !this.isSidebarActive;
+    this.toggleSidebarVal.emit(this.isSidebarActive);
+  }
 }
