@@ -77,7 +77,7 @@ export class ChartComponent implements OnInit {
               font: {
                 weight: 500
               },
-              callback: (val: number)=> this.chartData.labels[val] === 'total'? 'all' :  this.chartData.labels[val]
+              callback: (val: number)=> this.chartData.labels[val] === 'total'? 'All Customer' : this.chartData.labels[val].charAt(0).toUpperCase() + " " + this.chartData.labels[val].slice(1)
             },
             grid: {
               color: surfaceBorder,
