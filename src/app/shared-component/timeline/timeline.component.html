@@ -1,6 +1,6 @@
 <p-card class="bg-white">
     <h3 class="text-green-600 font-semibold p-3">News and Announcements</h3>
-    <p-timeline [value]="news" class="p-3">
+    <p-timeline [value]="news" class="p-3 overflow-auto max-h-22rem">
         <ng-template #opposite let-item>
             <small class="text-surface-500 dark:text-surface-400">Today <br>
                 {{item?.time}}</small>

@@ -1,6 +1,6 @@
 
 .view-all-container{
-    background-color:  var(--p-grey-300);
+    background-color:  var(--p-gray-200);
 }
 .custom-warn{
     display: inline-grid;
@@ -11,6 +11,7 @@
     background-position: center;
     background-repeat: no-repeat; 
 }
+
 @media (max-width: 768px) {
     .custom-warn {
         display: block;
@@ -24,3 +25,4 @@
         margin-bottom: 10px;
     }
 }
+

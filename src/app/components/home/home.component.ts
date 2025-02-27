@@ -18,7 +18,8 @@ import { ActionItemComponent } from '../../shared-component/action-item/action-i
 export class HomeComponent {
   visible: boolean = false;
   actionItems = [{ id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' },
-  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' }
+  { id: 'HV-120', description: 'Approval Pending', date: '21 June', link: '#' },
+  { id: 'HV-121', description: 'Review Quotation', date: '24 June', link: '#' }
   ];
   actionItemHeading = 'My Action Items';
 
