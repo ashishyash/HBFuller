@@ -65,14 +65,14 @@ export class FilterComponentComponent {
   getBusinessUnit() {
     this.restService.getApi(`${templateUrl.businessUnit}`).subscribe((data: any) => {
       data.forEach((element: any) => {
-        this.businessUnits.push({ label: element.operatingSegmentName, value: element })
+        this.businessUnits.push({ label: element.operatingSegmentName, value: element.operatingSegmentAbbreviation })
       });
     });
   }
   getBusinessRegion() {
     this.restService.getApi(`${templateUrl.businessRegion}`).subscribe((data: any) => {
       data.forEach((element: any) => {
-        this.businessRegions.push({ label: element.businessRegionName, value: element })
+        this.businessRegions.push({ label: element.businessRegionName, value: element.businessRegionAbbreviation })
       });
     });
   }

@@ -12,15 +12,15 @@
             <p-select class="w-full"
                 [pTooltip]="filterForm.get('businessUnit')?.value?.operatingSegmentName||'All Global Business Units'"
                 tooltipPosition="top" formControlName="businessUnit" [options]="businessUnits"
-                placeholder="All Global Business Units"></p-select>
+                placeholder="All Business Unit"></p-select>
         </div>
-        <div class="col-12 md:col-6 lg:col-3">
+        <div class="col-12 md:col-6 lg:col-4">
             <p-select class="w-full" formControlName="businessRegion"
                 [pTooltip]="filterForm.get('businessRegion')?.value?.businessRegionName||'All Business Regions'"
                 tooltipPosition="top" [options]="businessRegions" placeholder="All Business Regions"></p-select>
 
         </div>
-        <div class="col-12 md:col-6 lg:col-2">
+        <div class="col-12 md:col-6 lg:col-1">
             <p-button label="reset" variant="text" severity="info" (click)="resetFilters()" />
         </div>
 
